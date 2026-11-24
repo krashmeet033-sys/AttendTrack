@@ -1,0 +1,269 @@
+/* ==========================================================================
+   AttendTrack — Design System: Midnight Editorial
+   --------------------------------------------------------------------------
+   Direction: Midnight Editorial (Premium Academic SaaS)
+   High-contrast palette combining:
+   - Midnight Navy (#17172B / #22223B) dark sidebar as a strong visual anchor
+   - Warm Ivory (#F7F6F2), Soft Pearl (#FCFBF8), Pale Lavender (#F0EDFF) main content
+   - Electric Iris (#7357F6), Deep Violet (#5D45D8), Soft Violet (#EEE9FF)
+   - Status colours: Present (#159B72), Absent (#E36A78), Late (#D99A38)
+   - Typography: Deep Ink (#202034), Secondary (#77768B), Muted (#A09DAF)
+   ========================================================================== */
+
+:root {
+  color-scheme: light;
+
+  /* ---------- Typography ---------- */
+  --font-sans: 'Plus Jakarta Sans', 'Manrope', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Plus Jakarta Sans', 'Manrope', 'Outfit', var(--font-sans);
+  --font-mono: 'SFMono-Regular', ui-monospace, Menlo, Consolas, monospace;
+
+  /* ---------- Brand Tokens (Midnight Editorial) ---------- */
+  --brand-navy: #17172B;
+  --brand-navy-secondary: #22223B;
+  --brand-violet: #7357F6;
+  --brand-violet-deep: #5D45D8;
+  --brand-violet-soft: #EEE9FF;
+
+  /* ---------- Canvas Background (Warm Ivory × Soft Pearl × Pale Lavender) ---------- */
+  --color-canvas: #F7F6F2;
+  --grad-canvas: radial-gradient(at 10% 0%, rgba(240, 237, 255, 0.65) 0px, transparent 45%),
+    radial-gradient(at 90% 12%, rgba(252, 251, 248, 0.9) 0px, transparent 48%),
+    radial-gradient(at 50% 90%, rgba(247, 246, 242, 0.75) 0px, transparent 50%),
+    #F7F6F2;
+
+  /* Inset floating workspace frame */
+  --color-workspace-bg: #FCFBF8;
+  --color-workspace-border: rgba(34, 34, 59, 0.08);
+  --color-workspace-shadow: 0 20px 48px -12px rgba(23, 23, 43, 0.07), 0 4px 16px -2px rgba(23, 23, 43, 0.03);
+
+  /* Layered light surfaces */
+  --color-bg: #F7F6F2;
+  --color-surface: #FCFBF8;
+  --color-surface-solid: #FFFFFF;
+  --color-surface-alt: #F7F6F2;
+  --color-surface-sunken: #EFECE6;
+  --color-surface-raised: #FFFFFF;
+  --color-surface-glass: rgba(252, 251, 248, 0.94);
+
+  /* Navigation / Sidebar (Midnight Navy: #17172B / #22223B) */
+  --color-sidebar-bg: #17172B;
+  --color-sidebar-border: rgba(255, 255, 255, 0.08);
+  --color-sidebar-text: #A09DAF;
+  --color-sidebar-strong: #FFFFFF;
+  --color-sidebar-active: #FFFFFF;
+  --color-sidebar-active-bg: rgba(115, 87, 246, 0.18);
+  --color-sidebar-hover: rgba(255, 255, 255, 0.06);
+
+  /* Text Typography (Deep Ink: #202034, Secondary: #77768B, Muted: #A09DAF) */
+  --color-text: #202034;
+  --color-text-main: #202034;
+  --color-text-soft: #77768B;
+  --color-text-muted: #A09DAF;
+  --color-text-onDark: #FFFFFF;
+
+  /* Borders & Dividers */
+  --color-border: rgba(34, 34, 59, 0.09);
+  --color-border-strong: rgba(34, 34, 59, 0.18);
+  --color-divider: rgba(34, 34, 59, 0.07);
+  --color-track: rgba(34, 34, 59, 0.08);
+
+  /* Interactive Accent: Electric Iris (#7357F6) & Deep Violet (#5D45D8) */
+  --color-primary: #7357F6;
+  --color-primary-hover: #5D45D8;
+  --color-primary-main: #7357F6;
+  --color-primary-dark: #5D45D8;
+  --color-primary-soft: #EEE9FF;
+  --color-primary-ring: rgba(115, 87, 246, 0.22);
+
+  /* Secondary Accent */
+  --color-accent: #5D45D8;
+  --color-accent-hover: #4A34BD;
+  --color-accent-soft: rgba(115, 87, 246, 0.12);
+  --color-accent-ring: rgba(115, 87, 246, 0.22);
+
+  /* Semantic Statuses: Present (#159B72), Absent (#E36A78), Late (#D99A38) */
+  --color-present: #159B72;
+  --color-present-strong: #0E7C5A;
+  --color-present-soft: #E8F7F2;
+  --color-present-border: #A3DEC9;
+
+  --color-absent: #E36A78;
+  --color-absent-strong: #CC4B5A;
+  --color-absent-soft: #FDF0F2;
+  --color-absent-border: #F7B5BE;
+
+  --color-late: #D99A38;
+  --color-late-strong: #B87C22;
+  --color-late-soft: #FCF5EA;
+  --color-late-border: #F5D399;
+
+  /* Gradients & Glows (used sparingly) */
+  --grad-brand: linear-gradient(135deg, #7357F6 0%, #5D45D8 100%);
+  --grad-brand-soft: linear-gradient(135deg, rgba(115, 87, 246, 0.12), rgba(93, 69, 216, 0.06));
+  --grad-panel: linear-gradient(180deg, #FFFFFF 0%, #FCFBF8 100%);
+  --grad-card: linear-gradient(180deg, #FFFFFF 0%, #FBF9F5 100%);
+  --glow-brand: 0 8px 22px rgba(115, 87, 246, 0.22);
+  --glow-soft: 0 4px 16px rgba(34, 34, 59, 0.05);
+
+  /* Shadows */
+  --shadow-xs: 0 1px 2px rgba(23, 23, 43, 0.04);
+  --shadow-sm: 0 2px 6px rgba(23, 23, 43, 0.05);
+  --shadow-md: 0 6px 18px rgba(23, 23, 43, 0.07);
+  --shadow-lg: 0 14px 34px rgba(23, 23, 43, 0.09);
+  --shadow-xl: 0 24px 50px rgba(23, 23, 43, 0.12);
+
+  /* Radii */
+  --radius-xs: 6px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
+  --radius-full: 9999px;
+
+  /* Motion */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.22s ease;
+  --transition-slow: 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ==========================================================================
+   DARK THEME: Deep navy & rich purple theme
+   ========================================================================== */
+[data-theme='dark'] {
+  color-scheme: dark;
+
+  --color-canvas: #0f0b1e;
+  --grad-canvas: radial-gradient(at 15% -10%, rgba(129, 112, 217, 0.18) 0px, transparent 50%),
+    radial-gradient(at 90% 5%, rgba(68, 51, 122, 0.16) 0px, transparent 45%),
+    #0f0b1e;
+
+  --color-workspace-bg: #181329;
+  --color-workspace-border: rgba(129, 112, 217, 0.16);
+  --color-workspace-shadow: 0 24px 64px rgba(0, 0, 0, 0.45);
+
+  --color-bg: #0f0b1e;
+  --color-surface: #211a38;
+  --color-surface-solid: #211a38;
+  --color-surface-alt: #292144;
+  --color-surface-sunken: #151026;
+  --color-surface-raised: #2a2246;
+  --color-surface-glass: rgba(27, 21, 46, 0.88);
+
+  --color-sidebar-bg: #151026;
+  --color-sidebar-border: rgba(129, 112, 217, 0.14);
+  --color-sidebar-text: #89839f;
+  --color-sidebar-strong: #ffffff;
+  --color-sidebar-active: #ffffff;
+  --color-sidebar-active-bg: rgba(255, 255, 255, 0.08);
+  --color-sidebar-hover: rgba(255, 255, 255, 0.05);
+
+  --color-text: #ffffff;
+  --color-text-main: #ffffff;
+  --color-text-soft: #b8b2cf;
+  --color-text-muted: #89839f;
+  --color-text-onDark: #ffffff;
+
+  --color-border: rgba(129, 112, 217, 0.16);
+  --color-border-strong: rgba(129, 112, 217, 0.3);
+  --color-divider: rgba(129, 112, 217, 0.1);
+  --color-track: rgba(129, 112, 217, 0.14);
+
+  --color-primary: #8170d9;
+  --color-primary-hover: #9d8ef5;
+  --color-primary-main: #8170d9;
+  --color-primary-dark: #6857be;
+  --color-primary-soft: rgba(129, 112, 217, 0.16);
+  --color-primary-ring: rgba(129, 112, 217, 0.35);
+
+  --color-accent: #818CF8;
+  --color-accent-hover: #A5B4FC;
+
+  --color-present: #10B981;
+  --color-present-strong: #34D399;
+  --color-present-soft: rgba(52, 211, 153, 0.16);
+  --color-present-border: rgba(52, 211, 153, 0.35);
+
+  --color-absent: #F43F5E;
+  --color-absent-strong: #FB7185;
+  --color-absent-soft: rgba(251, 113, 133, 0.16);
+  --color-absent-border: rgba(251, 113, 133, 0.35);
+
+  --color-late: #F59E0B;
+  --color-late-strong: #FBBF24;
+  --color-late-soft: rgba(251, 191, 36, 0.16);
+  --color-late-border: rgba(251, 191, 36, 0.35);
+}
+
+/* ==========================================================================
+   BASE STYLES & ATMOSPHERIC CANVAS
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: var(--color-text);
+  background: var(--grad-canvas);
+  background-attachment: fixed;
+  min-height: 100vh;
+  line-height: 1.55;
+  overflow-x: hidden;
+  position: relative;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  color: var(--color-text);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+p {
+  color: var(--color-text-soft);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-primary-hover);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
