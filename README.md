@@ -449,7 +449,8 @@ An analytical overview of attendance patterns, student performance, attendance d
 
 A dedicated centre for reviewing attendance corrections, monitoring record modifications, and maintaining transparency in attendance management.
 
-<img width="1469" height="836" alt="Attendance Correction Centre and Audit Management" src="https://github.com/user-attachments/assets/12adb37d-6661-4bd5-99d6-7f1805e7adf8" />
+<img width="1469" height="835" alt="screenshots:attendance-corrections" src="https://github.com/user-attachments/assets/d76bea8b-29a2-48e5-962e-39d9c21ea779" />
+
 
 ---
 
